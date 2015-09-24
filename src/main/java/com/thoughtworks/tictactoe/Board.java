@@ -1,30 +1,27 @@
 package com.thoughtworks.tictactoe;
 
-import java.util.ArrayList;
+import java.util.Map;
 
 /**
  * Created by bpaff on 9/24/15.
  */
 public class Board {
 
-    private ArrayList<Space> spaces;
+    private Map<String,Space> spaces;
     private int numberOfSpaces;
 
-    public Board(ArrayList<Space> spaces, int numberOfSpaces){
+    public Board(Map<String, Space> spaces, int numberOfSpaces){
         this.spaces = spaces;
         this.numberOfSpaces = numberOfSpaces;
-    }
-
-    public void create()
-    {
-        for(int i =0; i< numberOfSpaces; i++)
-        {
-            spaces.add(new Space());
-        }
     }
 
     public void print()
     {
        //
+    }
+
+    public void spacePlayed(String space, String player)
+    {
+
     }
 }

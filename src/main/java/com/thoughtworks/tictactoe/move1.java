@@ -6,7 +6,7 @@ package com.thoughtworks.tictactoe;
 public class Move1 implements Move {
     @Override
     public void play(Board board,String player) {
-        board.SpacePlayed("1", player);
+        board.spacePlayed("1", player);
 
     }
 }

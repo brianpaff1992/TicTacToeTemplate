@@ -1,9 +1,9 @@
 package com.thoughtworks.tictactoe;
 
 import org.junit.Before;
-import org.junit.Test;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by bpaff on 9/24/15.
@@ -14,16 +14,9 @@ public class BoardTest {
 
     @Before
     public void init(){
-        ArrayList<Space> spaces = new ArrayList<>();
+        Map<String, Space> spaces = new HashMap<>();
         numberOfSpaces = 9;
         board = new Board(spaces, numberOfSpaces);
-    }
-
-    @Test
-    public void shouldCreateSameNumberOfSpacesAsGiven(){
-        board.create();
-
-
     }
 
 }

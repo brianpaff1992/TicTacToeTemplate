@@ -20,6 +20,7 @@ public class PlayerTest {
     private Move move;
     private Move move6;
     private String playerIdentifier;
+    private Board board;
 
     @Before
     public void init()
@@ -31,7 +32,8 @@ public class PlayerTest {
         moves.put("1", move);
         moves.put("6", move6);
         playerIdentifier = "X";
-        player = new Player(input, moves, playerIdentifier);
+        board = mock(Board.class);
+        player = new Player(input, moves, playerIdentifier, board);
     }
 
     @Test
@@ -49,7 +51,7 @@ public class PlayerTest {
         when(input.readPlayerInput()).thenReturn("1");
         player.getMove();
 
-        verify(move).play(playerIdentifier);
+        verify(move).play(board, playerIdentifier);
     }
 
     @Test
@@ -57,7 +59,7 @@ public class PlayerTest {
         when(input.readPlayerInput()).thenReturn("6");
         player.getMove();
 
-        verify(move6).play(playerIdentifier);
+        verify(move6).play(board, playerIdentifier);
     }
 
 }

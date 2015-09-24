@@ -10,19 +10,21 @@ public class Player {
     private PlayerInputReader reader;
     private Map<String, Move> moves;
     private String player;
+    private Board board;
 
-    public Player(PlayerInputReader reader, Map<String, Move> moves, String player)
+    public Player(PlayerInputReader reader, Map<String, Move> moves, String player, Board board)
     {
         this.reader = reader;
         this.moves = moves;
         this.player = player;
+        this.board = board;
     }
 
     public void getMove() {
         String userInput = reader.readPlayerInput();
 
         Move move = moves.get(userInput);
-        move.play(player);
+        move.play(board, player);
     }
 
 }

@@ -30,11 +30,11 @@ public class Game {
 
     public void start() {
         print();
-        board.create();
+        //board.create();
         playGame();
     }
 
-    private void playGame() {
+    public void playGame() {
         printstream.println("Player 1 select a move:");
         player1.getMove();
     }
