@@ -14,9 +14,18 @@ public class Main {
         PlayerInputReader pir = new PlayerInputReader(reader);
         Map<String, Move> moves = new HashMap<String, Move>();
         moves.put("1", new Move1());
+        moves.put("2", new Move2());
+        moves.put("3", new Move3());
+        moves.put("4", new Move4());
+        moves.put("5", new Move5());
+        moves.put("6", new Move6());
+        moves.put("7", new Move7());
+        moves.put("8", new Move8());
+        moves.put("9", new Move9());
         Player player1 = new Player(pir, moves);
         Player player2 = new Player(pir, moves);
-        Game game = new Game(printStream, player1, player2);
+        Board board = new Board();
+        Game game = new Game(printStream, player1, player2, board);
         game.start();
     }
 }

@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Map;
 
 import static org.mockito.Mockito.*;
@@ -16,13 +17,18 @@ public class PlayerTest {
     private Player player;
     private PlayerInputReader input;
     private Map<String, Move> moves;
+    private Move move;
+    private Move move6;
 
     @Before
     public void init()
     {
-        moves = mock(Map.class);
+        moves = new HashMap<String, Move>();
         input = mock(PlayerInputReader.class);
-        moves.put("1", new Move1());
+        move = mock(Move.class);
+        move6 = mock(Move.class);
+        moves.put("1", move);
+        moves.put("6", move6);
         player = new Player(input, moves);
     }
 
@@ -41,7 +47,15 @@ public class PlayerTest {
         when(input.readPlayerInput()).thenReturn("1");
         player.getMove();
 
-        verify(moves).get(1);
+        verify(move).play(player);
+    }
+
+    @Test
+    public void shouldSelectMoveSixAfterPlayerSelectsSix(){
+        when(input.readPlayerInput()).thenReturn("6");
+        player.getMove();
+
+        verify(move6).play(player);
     }
 
 }

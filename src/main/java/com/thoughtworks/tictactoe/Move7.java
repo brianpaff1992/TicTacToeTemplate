@@ -5,7 +5,7 @@ package com.thoughtworks.tictactoe;
  */
 public class Move7 implements Move {
     @Override
-    public void play() {
+    public void play(Player player) {
 
     }
 }

@@ -19,7 +19,8 @@ public class Player {
     public void getMove() {
         String userInput = reader.readPlayerInput();
 
-        moves.get(userInput).play();
+        Move move = moves.get(userInput);
+        move.play(this);
     }
 
 }

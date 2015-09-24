@@ -18,6 +18,7 @@ public class GameTest {
     private Game game;
     private Player player1;
     private Player player2;
+    private Board board;
 
     @Before
     public void init()
@@ -25,7 +26,15 @@ public class GameTest {
        printStream = mock(PrintStream.class);
         player1 = mock(Player.class);
         player2 = mock(Player.class);
-        game = new Game(printStream, player1, player2);
+        board = mock(Board.class);
+        game = new Game(printStream, player1, player2,board);
+    }
+
+    @Test
+    public void shouldCreateANewBoardWhenStarting(){
+        game.start();
+
+        verify(board).create();
     }
 
     @Test
