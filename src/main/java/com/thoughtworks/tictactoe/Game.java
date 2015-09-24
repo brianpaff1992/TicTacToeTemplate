@@ -8,11 +8,15 @@ import java.io.PrintStream;
 public class Game {
 
     private PrintStream printstream;
+    private final Player player1;
+    private final Player player2;
 
-    public Game(PrintStream printstream)
+    public Game(PrintStream printstream, Player player1, Player player2)
     {
 
         this.printstream = printstream;
+        this.player1 = player1;
+        this.player2 = player2;
     }
 
 
@@ -27,5 +31,6 @@ public class Game {
 
     private void playGame() {
         printstream.println("Player 1 select a move:");
+
     }
 }

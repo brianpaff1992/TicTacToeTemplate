@@ -16,12 +16,16 @@ public class GameTest {
 
     private PrintStream printStream;
     private Game game;
+    private Player player1;
+    private Player player2;
 
     @Before
     public void init()
     {
        printStream = mock(PrintStream.class);
-        game = new Game(printStream);
+        player1 = mock(Player.class);
+        player2 = mock(Player.class);
+        game = new Game(printStream, player1, player2);
     }
 
     @Test
