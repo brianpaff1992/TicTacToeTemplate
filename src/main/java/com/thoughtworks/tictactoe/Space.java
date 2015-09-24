@@ -14,4 +14,7 @@ public class Space {
     public String getSpace(){
         return space;
     }
+
+    public void take(Player player) {
+    }
 }

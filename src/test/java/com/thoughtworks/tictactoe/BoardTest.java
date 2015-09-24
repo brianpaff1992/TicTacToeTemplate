@@ -16,7 +16,7 @@ public class BoardTest {
     public void init(){
         Map<String, Space> spaces = new HashMap<>();
         numberOfSpaces = 9;
-        board = new Board(spaces, numberOfSpaces);
+        //board = new Board(spaces, numberOfSpaces);
     }
 
 }

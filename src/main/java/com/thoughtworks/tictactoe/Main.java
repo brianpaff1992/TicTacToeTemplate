@@ -29,10 +29,10 @@ public class Main {
             int spaceNumber = i+1;
             spaces.put("" + spaceNumber, new Space());
         }
-        Board board = new Board(spaces, numberOfSpaces);
-        Player player1 = new Player(pir, moves, "X", board);
-        Player player2 = new Player(pir, moves, "O", board);
-        Game game = new Game(printStream, player1, player2, board);
-        game.start();
+//        Board board = new Board(spaces, numberOfSpaces);
+//        Player player1 = new Player(pir, moves, "X", board);
+//        Player player2 = new Player(pir, moves, "O", board);
+//        Game game = new Game(printStream, player1, player2, board);
+//        game.start();
     }
 }
