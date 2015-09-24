@@ -17,6 +17,15 @@ public class Game {
 
 
     public void print() {
-        printstream.println(" | | \n | | \n | | ");
+        printstream.println(" | | \n-----\n | | \n-----\n | | ");
+    }
+
+    public void start() {
+        print();
+        playGame();
+    }
+
+    private void playGame() {
+        printstream.println("Player 1 select a move:");
     }
 }

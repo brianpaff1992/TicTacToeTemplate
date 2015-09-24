@@ -1,7 +1,12 @@
 package com.thoughtworks.tictactoe;
 
+import java.io.PrintStream;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Brian Hello Tic Tac Toe");
+
+        PrintStream printStream = System.out;
+        Game game = new Game(printStream);
+        game.start();
     }
 }

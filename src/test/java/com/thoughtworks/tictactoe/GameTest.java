@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.io.PrintStream;
 
+import static org.mockito.Matchers.contains;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
@@ -28,7 +29,14 @@ public class GameTest {
     {
         game.print();
 
-        verify(printStream).println(" | | \n | | \n | | ");
+        verify(printStream).println(" | | \n-----\n | | \n-----\n | | ");
+    }
+
+    @Test
+    public void shouldPrintPlayer1SelectMoveMessageAfterGameStarted(){
+        game.start();
+
+        verify(printStream).println(contains("select a move"));
     }
 
 }
