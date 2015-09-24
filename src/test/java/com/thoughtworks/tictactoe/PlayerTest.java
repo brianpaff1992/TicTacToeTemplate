@@ -19,6 +19,7 @@ public class PlayerTest {
     private Map<String, Move> moves;
     private Move move;
     private Move move6;
+    private String playerIdentifier;
 
     @Before
     public void init()
@@ -29,7 +30,8 @@ public class PlayerTest {
         move6 = mock(Move.class);
         moves.put("1", move);
         moves.put("6", move6);
-        player = new Player(input, moves);
+        playerIdentifier = "X";
+        player = new Player(input, moves, playerIdentifier);
     }
 
     @Test
@@ -47,7 +49,7 @@ public class PlayerTest {
         when(input.readPlayerInput()).thenReturn("1");
         player.getMove();
 
-        verify(move).play(player);
+        verify(move).play(playerIdentifier);
     }
 
     @Test
@@ -55,7 +57,7 @@ public class PlayerTest {
         when(input.readPlayerInput()).thenReturn("6");
         player.getMove();
 
-        verify(move6).play(player);
+        verify(move6).play(playerIdentifier);
     }
 
 }

@@ -9,9 +9,10 @@ public class Board {
 
     ArrayList<Space> spaces;
     int numberOfSpaces;
-    public Board(){
-        spaces = new ArrayList<Space>();
-        numberOfSpaces = 9;
+
+    public Board(ArrayList<Space> spaces, int numberOfSpaces){
+        this.spaces = spaces;
+        this.numberOfSpaces = numberOfSpaces;
     }
 
     public void create()
@@ -24,6 +25,10 @@ public class Board {
 
     public void print()
     {
-
+//        String board = "";
+//        for(int i = 0; i< numberOfSpaces; i++)
+//        {
+//            if(i %2 == 0 || i%3)
+//        }
     }
 }

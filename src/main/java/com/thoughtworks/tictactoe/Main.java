@@ -3,6 +3,7 @@ package com.thoughtworks.tictactoe;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,9 +23,11 @@ public class Main {
         moves.put("7", new Move7());
         moves.put("8", new Move8());
         moves.put("9", new Move9());
-        Player player1 = new Player(pir, moves);
-        Player player2 = new Player(pir, moves);
-        Board board = new Board();
+        Player player1 = new Player(pir, moves, "X");
+        Player player2 = new Player(pir, moves, "O");
+        ArrayList<Space> spaces = new ArrayList<>();
+        int numberOfSpaces = 9;
+        Board board = new Board(spaces, numberOfSpaces);
         Game game = new Game(printStream, player1, player2, board);
         game.start();
     }

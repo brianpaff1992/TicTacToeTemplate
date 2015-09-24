@@ -23,7 +23,9 @@ public class Game {
 
 
     public void print() {
+
         printstream.println(" | | \n-----\n | | \n-----\n | | ");
+        //board.print();
     }
 
     public void start() {
