@@ -8,7 +8,6 @@ import java.io.PrintStream;
 import static org.mockito.Matchers.contains;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
 
 /**
  * Created by bpaff on 9/24/15.
@@ -48,7 +47,7 @@ public class GameTest {
 
     @Test
     public void shouldPrintXInTopRightCornerWhenPlayerSelectsOne(){
-        when(player1.getMove()).thenReturn("1");
+
         game.playGame();
 
         verify(printStream).println("X| | \n-----\n | | \n-----\n | | ");
