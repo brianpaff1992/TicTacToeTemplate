@@ -7,8 +7,8 @@ import java.util.ArrayList;
  */
 public class Board {
 
-    ArrayList<Space> spaces;
-    int numberOfSpaces;
+    private ArrayList<Space> spaces;
+    private int numberOfSpaces;
 
     public Board(ArrayList<Space> spaces, int numberOfSpaces){
         this.spaces = spaces;
@@ -25,10 +25,6 @@ public class Board {
 
     public void print()
     {
-//        String board = "";
-//        for(int i = 0; i< numberOfSpaces; i++)
-//        {
-//            if(i %2 == 0 || i%3)
-//        }
+       //
     }
 }
