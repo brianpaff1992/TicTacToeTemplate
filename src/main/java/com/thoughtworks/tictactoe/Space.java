@@ -15,6 +15,7 @@ public class Space {
         return space;
     }
 
-    public void take(Player player) {
+    public void take(String player) {
+        space = player;
     }
 }

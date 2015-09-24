@@ -22,17 +22,13 @@ public class Main {
         moves.put("7", new Move7());
         moves.put("8", new Move8());
         moves.put("9", new Move9());
-        Map<String, Space> spaces = new HashMap();
-        int numberOfSpaces = 9;
-        for(int i = 0; i<numberOfSpaces; i++)
-        {
-            int spaceNumber = i+1;
-            spaces.put("" + spaceNumber, new Space());
-        }
-//        Board board = new Board(spaces, numberOfSpaces);
-//        Player player1 = new Player(pir, moves, "X", board);
-//        Player player2 = new Player(pir, moves, "O", board);
-//        Game game = new Game(printStream, player1, player2, board);
-//        game.start();
+        Row row1 = new Row(new Space(), new Space(), new Space());
+        Row row2 = new Row(new Space(), new Space(), new Space());
+        Row row3 = new Row(new Space(), new Space(), new Space());
+        Board board = new Board(row1, row2, row3, printStream);
+        Player player1 = new Player(pir, moves, "X", board);
+        Player player2 = new Player(pir, moves, "O", board);
+        Game game = new Game(printStream, player1, player2, board);
+        game.start();
     }
 }

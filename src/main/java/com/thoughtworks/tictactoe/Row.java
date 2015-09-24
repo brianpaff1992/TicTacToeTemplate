@@ -15,7 +15,7 @@ public class Row {
         this.rightSpace = rightSpace;
     }
 
-    public void take(String space, Player player) {
+    public void take(String space, String player) {
         if(space.equals("left"))
         {
             leftSpace.take(player);

@@ -3,8 +3,10 @@ package com.thoughtworks.tictactoe;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 /**
  * Created by bpaff on 9/24/15.
@@ -14,7 +16,7 @@ public class RowTest {
     private Space left;
     private Space center;
     private Space right;
-    private Player player;
+    private String player;
     private Row row;
 
     @Before
@@ -23,7 +25,7 @@ public class RowTest {
         center = mock(Space.class);
         right = mock(Space.class);
         row = new Row(left, center, right);
-        player = mock(Player.class);
+        player = "X";
     }
 
     @Test
@@ -54,6 +56,16 @@ public class RowTest {
         verify(left).getSpace();
         verify(center).getSpace();
         verify(right).getSpace();
+    }
+
+    @Test
+    public void shouldFormatIntoATicTacToeRow(){
+        when(left.getSpace()).thenReturn(" ");
+        when(center.getSpace()).thenReturn(" ");
+        when(right.getSpace()).thenReturn(" ");
+        String formattedRow = row.format();
+
+        assertEquals(" | | ", formattedRow);
     }
 
 }
