@@ -36,14 +36,14 @@ public class Board {
         //figureOutWhatRowItGoesInto
         if(row1.has(space))
         {
-            row1.spaceTaken(space);
+            row1.spaceTaken(space, player);
         }
         else if (row2.has(space))
         {
-            row2.spaceTaken(space);
+            row2.spaceTaken(space, player);
         }
         else{
-            row3.spaceTaken(space);
+            row3.spaceTaken(space, player);
         }
 
     }

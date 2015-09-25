@@ -53,9 +53,9 @@ public class BoardTest {
     @Test
     public void shouldMarkCorrectRowsAsHavingATakenSpaceWhenMoveIsSelected(){
         when(row1.has("1")).thenReturn(true);
-        board.spacePlayed("1", "x");
+        board.spacePlayed("1", "X");
 
-        verify(row1).spaceTaken("1");
+        verify(row1).spaceTaken("1", "X");
     }
 
     @Test

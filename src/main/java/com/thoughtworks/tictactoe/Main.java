@@ -22,9 +22,9 @@ public class Main {
         moves.put("7", new Move7());
         moves.put("8", new Move8());
         moves.put("9", new Move9());
-        Row row1 = new Row(new Space(), new Space(), new Space());
-        Row row2 = new Row(new Space(), new Space(), new Space());
-        Row row3 = new Row(new Space(), new Space(), new Space());
+        Row row1 = new Row(new Space("1"), new Space("2"), new Space("3"));
+        Row row2 = new Row(new Space("4"), new Space("5"), new Space("6"));
+        Row row3 = new Row(new Space("7"), new Space("8"), new Space("9"));
         Board board = new Board(row1, row2, row3, printStream);
         Player player1 = new Player(pir, moves, "X", board);
         Player player2 = new Player(pir, moves, "O", board);
