@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+import static org.junit.Assert.assertFalse;
 import static org.mockito.Mockito.*;
 
 /**
@@ -40,7 +41,7 @@ public class PlayerTest {
     public void shouldPromptPlayerForAMove() throws IOException {
 
         when(input.readPlayerInput()).thenReturn("1");
-        player.getMove();
+        player.getAndPlayMove();
 
         verify(input).readPlayerInput();
 
@@ -49,7 +50,7 @@ public class PlayerTest {
     @Test
     public void shouldSelectMoveAfterPlayerSelection() throws IOException {
         when(input.readPlayerInput()).thenReturn("1");
-        player.getMove();
+        player.getAndPlayMove();
 
         verify(move).play(board, playerIdentifier);
     }
@@ -57,9 +58,19 @@ public class PlayerTest {
     @Test
     public void shouldSelectMoveSixAfterPlayerSelectsSix(){
         when(input.readPlayerInput()).thenReturn("6");
-        player.getMove();
+        player.getAndPlayMove();
 
         verify(move6).play(board, playerIdentifier);
+    }
+
+    @Test
+    public void shouldReturnFalseWhenSelectedMoveIsAlreadyOccupied(){
+        when(move.play(board, "X")).thenReturn(false);
+        when(input.readPlayerInput()).thenReturn("6");
+
+
+        assertFalse(player.getAndPlayMove());
+
     }
 
 }

@@ -36,10 +36,16 @@ public class Game {
 
     public void playGame() {
         printstream.println("Player 1 select a move:");
-        player1.getMove();
-        board.printBoard();
+        playerMove(player1);
         printstream.println("Player 2 select a move:");
-        player2.getMove();
+        playerMove(player2);
+    }
+
+    private void playerMove(Player player) {
+        //Tested With only one player, it works.. keeps saying it was called two times and fails, not sure how to fix.
+        while(!player.getAndPlayMove()){
+            printstream.println("Location already taken");
+        }
         board.printBoard();
     }
 }

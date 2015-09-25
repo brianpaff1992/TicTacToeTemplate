@@ -5,8 +5,8 @@ package com.thoughtworks.tictactoe;
  */
 public class Move1 implements Move {
     @Override
-    public void play(Board board,String player) {
-        board.spacePlayed("1", player);
+    public boolean play(Board board, String player) {
+        return board.spacePlayed("1", player);
 
     }
 }

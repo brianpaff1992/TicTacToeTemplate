@@ -31,19 +31,19 @@ public class Board {
 
     }
 
-    public void spacePlayed(String space, String player)
+    public boolean spacePlayed(String space, String player)
     {
         //figureOutWhatRowItGoesInto
         if(row1.has(space))
         {
-            row1.spaceTaken(space, player);
+            return row1.spaceTaken(space, player);
         }
         else if (row2.has(space))
         {
-            row2.spaceTaken(space, player);
+            return row2.spaceTaken(space, player);
         }
         else{
-            row3.spaceTaken(space, player);
+            return row3.spaceTaken(space, player);
         }
 
     }

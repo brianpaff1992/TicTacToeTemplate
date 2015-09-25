@@ -7,6 +7,8 @@ import java.io.PrintStream;
 import java.util.HashMap;
 import java.util.Map;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.*;
 
 /**
@@ -67,6 +69,26 @@ public class BoardTest {
         board.printBoard();
 
         verify(printStream).println("X| | \n-----\n | | \n-----\n | | ");
+    }
+
+    @Test
+    public void shouldReturnFalseWhenMoveNotPlaced(){
+        String space = "1";
+        String player = "X";
+        when(row1.has(space)).thenReturn(true);
+        when(row1.spaceTaken(space, player)).thenReturn(false);
+
+        assertFalse(board.spacePlayed(space, player));
+    }
+
+    @Test
+    public void shouldReturnTrueWhenMoveNotPlaced(){
+        String space = "1";
+        String player = "X";
+        when(row1.has(space)).thenReturn(true);
+        when(row1.spaceTaken(space, player)).thenReturn(true);
+
+        assertTrue(board.spacePlayed(space, player));
     }
 
 }

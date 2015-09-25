@@ -34,7 +34,7 @@ public class Row {
         return leftSpace.getSpace() + "|" + centerSpace.getSpace() + "|" + rightSpace.getSpace();
     }
 
-    public void spaceTaken(String space, String player) {
+    public boolean spaceTaken(String space, String player) {
         if(leftSpace.is(space))
         {
             leftSpace.take(player);
@@ -47,6 +47,7 @@ public class Row {
         {
             rightSpace.take(player);
         }
+        return false;
     }
 
     public boolean has(String space) {

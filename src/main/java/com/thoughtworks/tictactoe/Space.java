@@ -17,11 +17,28 @@ public class Space {
         return space;
     }
 
-    public void take(String player) {
-        space = player;
+    public boolean take(String player) {
+        if(space.equals(" "))
+        {
+            space = player;
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     public boolean is(String space) {
         return space.equals(spaceNumber);
+    }
+
+    public boolean isTaken() {
+        if(space.equals(" "))
+        {
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 }

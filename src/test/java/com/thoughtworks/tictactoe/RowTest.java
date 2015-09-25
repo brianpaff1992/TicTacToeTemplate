@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
@@ -76,6 +77,15 @@ public class RowTest {
         boolean bool = row.has("1");
 
         assertTrue(bool);
+    }
+
+    @Test
+    public void shouldReturnFalseWhenMoveWasNotTaken(){
+        String space = "1";
+        when(left.is(space)).thenReturn(true);
+        when(left.take(player)).thenReturn(false);
+
+        assertFalse(row.spaceTaken(space,player));
     }
 
 }

@@ -20,11 +20,11 @@ public class Player {
         this.board = board;
     }
 
-    public void getMove() {
-        String userInput = reader.readPlayerInput();
+    public boolean getAndPlayMove() {
 
+        String userInput = reader.readPlayerInput();
         Move move = moves.get(userInput);
-        move.play(board, player);
+        return move.play(board, player);
     }
 
 }
