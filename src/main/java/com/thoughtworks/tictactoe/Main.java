@@ -26,8 +26,8 @@ public class Main {
         Row row2 = new Row(new Space("4"), new Space("5"), new Space("6"));
         Row row3 = new Row(new Space("7"), new Space("8"), new Space("9"));
         Board board = new Board(row1, row2, row3, printStream);
-        Player player1 = new Player(pir, moves, "X", board);
-        Player player2 = new Player(pir, moves, "O", board);
+        Player player1 = new Player(pir, moves, "O", board);
+        Player player2 = new Player(pir, moves, "X", board);
         Game game = new Game(printStream, player1, player2, board);
         game.start();
     }
