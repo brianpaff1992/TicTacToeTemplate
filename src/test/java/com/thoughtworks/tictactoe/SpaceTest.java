@@ -15,7 +15,7 @@ public class SpaceTest {
 
     @Before
     public void init(){
-        space = new Space();
+        space = new Space("1");
         player = "X";
     }
 

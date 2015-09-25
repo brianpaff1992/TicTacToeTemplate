@@ -7,9 +7,7 @@ import java.io.PrintStream;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 /**
  * Created by bpaff on 9/24/15.
@@ -52,6 +50,23 @@ public class BoardTest {
         verify(printStream).println(" | | \n-----\n | | \n-----\n | | ");
     }
 
+    @Test
+    public void shouldMarkCorrectRowsAsHavingATakenSpaceWhenMoveIsSelected(){
+        when(row1.has("1")).thenReturn(true);
+        board.spacePlayed("1", "x");
 
+        verify(row1).spaceTaken("1");
+    }
+
+    @Test
+    public void shouldPrintXInTopRightCornerWhenPlayerSelectsOne(){
+
+        when(row1.format()).thenReturn("X| | ");
+        when(row2.format()).thenReturn(" | | ");
+        when(row3.format()).thenReturn(" | | ");
+        board.printBoard();
+
+        verify(printStream).println("X| | \n-----\n | | \n-----\n | | ");
+    }
 
 }

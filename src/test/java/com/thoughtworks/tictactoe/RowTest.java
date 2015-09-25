@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -66,6 +67,15 @@ public class RowTest {
         String formattedRow = row.format();
 
         assertEquals(" | | ", formattedRow);
+    }
+
+    @Test
+    public void shouldHaveSpaceWhenSpaceIsInRow(){
+        when(left.is("1")).thenReturn(true);
+
+        boolean bool = row.has("1");
+
+        assertTrue(bool);
     }
 
 }

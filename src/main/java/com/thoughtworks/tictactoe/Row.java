@@ -33,4 +33,18 @@ public class Row {
     public String format() {
         return leftSpace.getSpace() + "|" + centerSpace.getSpace() + "|" + rightSpace.getSpace();
     }
+
+    public void spaceTaken(String space) {
+    }
+
+    public boolean has(String space) {
+        if(leftSpace.is(space) || centerSpace.is(space) || rightSpace.is(space))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

@@ -36,7 +36,7 @@ public class GameTest {
     {
         game.print();
 
-        verify(printStream).println(" | | \n-----\n | | \n-----\n | | ");
+        verify(board).printBoard();
     }
 
     @Test

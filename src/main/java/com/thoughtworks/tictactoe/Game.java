@@ -24,8 +24,8 @@ public class Game {
 
     public void print() {
 
-        printstream.println(" | | \n-----\n | | \n-----\n | | ");
-        //board.print();
+        //printstream.println(" | | \n-----\n | | \n-----\n | | ");
+        board.printBoard();
     }
 
     public void start() {
@@ -37,5 +37,6 @@ public class Game {
     public void playGame() {
         printstream.println("Player 1 select a move:");
         player1.getMove();
+        board.printBoard();
     }
 }

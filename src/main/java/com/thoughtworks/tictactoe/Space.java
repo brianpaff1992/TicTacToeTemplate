@@ -4,11 +4,13 @@ package com.thoughtworks.tictactoe;
  * Created by bpaff on 9/24/15.
  */
 public class Space {
-    String space;
+    private String space;
+    private String spaceNumber;
 
-    public Space()
+    public Space(String spaceNumber)
     {
         space = " ";
+        this.spaceNumber = spaceNumber;
     }
 
     public String getSpace(){
@@ -17,5 +19,9 @@ public class Space {
 
     public void take(String player) {
         space = player;
+    }
+
+    public boolean is(String space) {
+        return space.equals(spaceNumber);
     }
 }
