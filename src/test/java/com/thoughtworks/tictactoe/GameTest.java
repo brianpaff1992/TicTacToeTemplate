@@ -30,7 +30,7 @@ public class GameTest {
         game = new Game(printStream, player1, player2,board);
         when(player1.getAndPlayMove()).thenReturn(true);
         when(player2.getAndPlayMove()).thenReturn(true);
-        when(board.isFull()).thenReturn(false, true);
+        when(board.isFull()).thenReturn(false,false, true);
     }
 
     @Test

@@ -97,4 +97,21 @@ public class RowTest {
         assertTrue(row.spaceTaken(space, player));
     }
 
+    @Test
+    public void shouldReturnFullWhenAllSpacesTaken(){
+        when(left.isTaken()).thenReturn(true);
+        when(center.isTaken()).thenReturn(true);
+        when(right.isTaken()).thenReturn(true);
+
+        assertTrue(row.isFull());
+    }
+
+    @Test
+    public void shouldReturnNotFullWhenNotAllSpacesTaken(){
+        when(left.isTaken()).thenReturn(false);
+        when(center.isTaken()).thenReturn(true);
+        when(right.isTaken()).thenReturn(true);
+
+        assertFalse(row.isFull());
+    }
 }

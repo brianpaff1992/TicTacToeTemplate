@@ -60,6 +60,13 @@ public class Board {
     }
 
     public boolean isFull() {
-        return false;
+        if(row1.isFull() && row2.isFull() && row3.isFull())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

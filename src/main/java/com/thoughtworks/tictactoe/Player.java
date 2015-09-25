@@ -27,4 +27,23 @@ public class Player {
         return move.play(board, player);
     }
 
+    @Override
+    public boolean equals(Object player)
+    {
+        Player p = (Player) player;
+        if(p.getPlayer().equals(this.player))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+
+    public String getPlayer() {
+        return player;
+    }
+
 }

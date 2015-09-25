@@ -91,4 +91,22 @@ public class BoardTest {
         assertTrue(board.spacePlayed(space, player));
     }
 
+    @Test
+    public void shouldReturnBoardIsFullIfAllRowsAreFull(){
+        when(row1.isFull()).thenReturn(true);
+        when(row2.isFull()).thenReturn(true);
+        when(row3.isFull()).thenReturn(true);
+
+        assertTrue(board.isFull());
+    }
+
+    @Test
+    public void shouldReturnBoardIsNotFullWhenOneRowIsNotFull(){
+        when(row1.isFull()).thenReturn(false);
+        when(row2.isFull()).thenReturn(true);
+        when(row3.isFull()).thenReturn(true);
+
+        assertFalse(board.isFull());
+    }
+
 }

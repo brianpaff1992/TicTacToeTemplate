@@ -59,4 +59,15 @@ public class Row {
             return false;
         }
     }
+
+    public boolean isFull() {
+        if(leftSpace.isTaken() && centerSpace.isTaken() && rightSpace.isTaken())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }
