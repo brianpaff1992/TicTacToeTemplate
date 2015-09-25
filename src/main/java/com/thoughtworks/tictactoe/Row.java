@@ -37,17 +37,16 @@ public class Row {
     public boolean spaceTaken(String space, String player) {
         if(leftSpace.is(space))
         {
-            leftSpace.take(player);
+            return leftSpace.take(player);
         }
         else if (centerSpace.is(space))
         {
-            centerSpace.take(player);
+            return centerSpace.take(player);
         }
         else
         {
-            rightSpace.take(player);
+            return rightSpace.take(player);
         }
-        return false;
     }
 
     public boolean has(String space) {

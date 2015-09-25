@@ -85,7 +85,16 @@ public class RowTest {
         when(left.is(space)).thenReturn(true);
         when(left.take(player)).thenReturn(false);
 
-        assertFalse(row.spaceTaken(space,player));
+        assertFalse(row.spaceTaken(space, player));
+    }
+
+    @Test
+    public void shouldReturnTrueWhenMoveWasTaken(){
+        String space = "1";
+        when(left.is(space)).thenReturn(true);
+        when(left.take(player)).thenReturn(true);
+
+        assertTrue(row.spaceTaken(space, player));
     }
 
 }
