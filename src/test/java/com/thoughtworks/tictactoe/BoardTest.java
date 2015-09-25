@@ -109,4 +109,13 @@ public class BoardTest {
         assertFalse(board.isFull());
     }
 
+    @Test
+    public void shouldReturnWinnerIfThreeOfSamePlayerInRow(){
+        when(row1.hasWinner()).thenReturn(true);
+        when(row2.hasWinner()).thenReturn(false);
+        when(row3.hasWinner()).thenReturn(false);
+
+        assertTrue(board.isWinner());
+    }
+
 }

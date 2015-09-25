@@ -90,4 +90,20 @@ public class GameTest {
         verify(printStream).println(contains("Game is a draw"));
     }
 
+    @Test
+    public void shouldCheckAfterEachMoveIfThatPlayerHasWon(){
+
+        game.playGame();
+        verify(board, times(3)).isWinner();
+    }
+
+    @Test
+    public void shouldPrintWinnerIfGameIsWon(){
+        when(board.isWinner()).thenReturn(true);
+
+        game.playGame();
+
+        verify(printStream).println(contains("Wins"));
+    }
+
 }

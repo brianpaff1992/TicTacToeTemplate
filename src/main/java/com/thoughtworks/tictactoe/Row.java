@@ -70,4 +70,21 @@ public class Row {
             return false;
         }
     }
+
+    public boolean hasWinner() {
+        if(leftSpace.isTaken() && centerSpace.isTaken() && rightSpace.isTaken())
+        {
+            if(leftSpace.getSpace().equals(centerSpace.getSpace()) && centerSpace.getSpace().equals(rightSpace.getSpace()))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else{
+            return false;
+        }
+    }
 }

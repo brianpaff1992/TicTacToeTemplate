@@ -114,4 +114,37 @@ public class RowTest {
 
         assertFalse(row.isFull());
     }
+
+    @Test
+    public void shouldReturnTrueIfAllThreeSpacesHaveMatchingPlayer(){
+        when(left.isTaken()).thenReturn(true);
+        when(center.isTaken()).thenReturn(true);
+        when(right.isTaken()).thenReturn(true);
+        when(left.getSpace()).thenReturn("X");
+        when(center.getSpace()).thenReturn("X");
+        when(right.getSpace()).thenReturn("X");
+
+        assertTrue(row.hasWinner());
+    }
+
+    @Test
+    public void shouldReturnFalseIfAllThreeSpacesDontHaveMatchingPlayer(){
+        when(left.isTaken()).thenReturn(true);
+        when(center.isTaken()).thenReturn(true);
+        when(right.isTaken()).thenReturn(true);
+        when(left.getSpace()).thenReturn("X");
+        when(center.getSpace()).thenReturn("X");
+        when(right.getSpace()).thenReturn("O");
+
+        assertFalse(row.hasWinner());
+    }
+
+    @Test
+    public void shouldReturnFalseIfAnySpaceIsntTake(){
+        when(left.isTaken()).thenReturn(true);
+        when(center.isTaken()).thenReturn(false);
+        when(right.isTaken()).thenReturn(true);
+
+        assertFalse(row.hasWinner());
+    }
 }

@@ -69,4 +69,15 @@ public class Board {
             return false;
         }
     }
+
+    public boolean isWinner() {
+        if(row1.hasWinner() || row2.hasWinner() || row3.hasWinner())
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

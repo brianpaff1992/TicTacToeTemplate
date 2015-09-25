@@ -35,12 +35,24 @@ public class Game {
     }
 
     public void playGame() {
-        Player player = player1;
-        while (!board.isFull()) {
-            playerTurn(player);
-            player = switchActivePlayer(player);
+        Player activePlayer = player2;
+        while (!board.isFull() && !board.isWinner()) {
+            activePlayer = switchActivePlayer(activePlayer);
+            playerTurn(activePlayer);
         }
-        printstream.println("Game is a draw");
+        finishGame(activePlayer);
+    }
+
+    private void finishGame(Player player) {
+
+        if(board.isWinner())
+        {
+            String winnersNumber = getPlayerNumber(player);
+            printstream.println("Player " + winnersNumber + " Wins!");
+        }
+        else {
+            printstream.println("Game is a draw");
+        }
     }
 
     private Player switchActivePlayer(Player player) {
@@ -54,13 +66,18 @@ public class Game {
     }
 
     private void playerTurn(Player player) {
+        String p = getPlayerNumber(player);
+        printstream.println("Player " + p + " select a move:");
+        playerMove(player);
+    }
+
+    private String getPlayerNumber(Player player) {
         String p = "2";
         if(player.equals(player1))
         {
             p = "1";
         }
-        printstream.println("Player " + p + " select a move:");
-        playerMove(player);
+        return p;
     }
 
     private void playerMove(Player player) {
