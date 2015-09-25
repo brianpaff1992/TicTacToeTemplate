@@ -1,7 +1,6 @@
 package com.thoughtworks.tictactoe;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.PrintStream;
@@ -43,16 +42,29 @@ public class GameTest {
     public void shouldPrintPlayer1SelectMoveMessageAfterGameStarted(){
         game.start();
 
-        verify(printStream).println(contains("select a move"));
+        verify(printStream).println(contains("Player 1"));
     }
 
     @Test
-    @Ignore
-    public void shouldPrintXInTopRightCornerWhenPlayerSelectsOne(){
+    public void shouldGetPlayer1MoveAfterPromptMessage(){
+        game.start();
 
-        game.playGame();
+        verify(player1).getMove();
+    }
 
-        verify(printStream).println("X| | \n-----\n | | \n-----\n | | ");
+    @Test
+    public void shouldPrintPlayer2SelectMoveMessageAfterGameStarted(){
+        game.start();
+
+        verify(printStream).println(contains("Player 2"));
+    }
+
+
+    @Test
+    public void shouldGetPlayer2MoveAfterPromptMessage(){
+        game.start();
+
+        verify(player2).getMove();
     }
 
 }
