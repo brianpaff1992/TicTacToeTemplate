@@ -40,5 +40,6 @@ public class Game {
         board.printBoard();
         printstream.println("Player 2 select a move:");
         player2.getMove();
+        board.printBoard();
     }
 }
