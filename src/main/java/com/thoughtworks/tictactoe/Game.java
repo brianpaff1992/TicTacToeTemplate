@@ -35,10 +35,13 @@ public class Game {
     }
 
     public void playGame() {
-        printstream.println("Player 1 select a move:");
-        playerMove(player1);
-        printstream.println("Player 2 select a move:");
-        playerMove(player2);
+        while (!board.isFull()) {
+            printstream.println("Player 1 select a move:");
+            playerMove(player1);
+            printstream.println("Player 2 select a move:");
+            playerMove(player2);
+        }
+        printstream.println("Game is a draw");
     }
 
     private void playerMove(Player player) {

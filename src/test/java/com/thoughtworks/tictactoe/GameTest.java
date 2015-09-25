@@ -30,6 +30,7 @@ public class GameTest {
         game = new Game(printStream, player1, player2,board);
         when(player1.getAndPlayMove()).thenReturn(true);
         when(player2.getAndPlayMove()).thenReturn(true);
+        when(board.isFull()).thenReturn(false, true);
     }
 
     @Test
@@ -78,6 +79,15 @@ public class GameTest {
         game.playGame();
 
         verify(printStream).println(contains("Location already taken"));
+    }
+
+    @Test
+    public void shouldQuitGameIfGameIsDone(){
+        when(board.isFull()).thenReturn(true);
+
+        game.playGame();
+
+        verify(printStream).println(contains("Game is a draw"));
     }
 
 }

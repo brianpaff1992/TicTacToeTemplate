@@ -58,4 +58,8 @@ public class Board {
 
         printStream.println(board);
     }
+
+    public boolean isFull() {
+        return false;
+    }
 }
